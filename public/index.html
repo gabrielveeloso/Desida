@@ -1,0 +1,279 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>CogniSigns | bio data, knowledge & health</title>
+    
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
+    <!-- <meta name="author" content="GazeRecorder">
+    <meta name="description" content="Accurate & Robust WebCam Online Eye-Tracking.">
+    <meta property="og:title" content="GazeCloudAPI | Cross-platform Real-Time Eye-Tracking">
+    <meta property="og:description" content="Accurate & Robust WebCam Online Eye-Tracking.">
+    <meta property="og:image" content="https://api.gazerecorder.com/gazecloudapi.png">
+    <meta property="og:url" content="https://api.gazerecorder.com">
+    <meta name="twitter:description" content="Accurate & Robust WebCam Online Eye-Tracking.">
+    <meta name="twitter:title" content="GazeCloudAPI | Cross-platform Real-Time Eye-Tracking"> -->
+
+</head>
+
+<body style="position: relative;">
+    <div class="app-container">
+        <div class="app-nav">
+            <img src="./img/logo.png" />
+        </div>
+        <!-- <h1>GazeCloud API </h1>
+        <h4>WebCam Online Eye-Tracking</h4>
+        <br> -->
+
+        <button id='startid' class='buttonStartEyeTrack' type="button" onclick="start() ">Começar análise</button>
+        <button id='stopid' style='display:none' class='buttonStartEyeTrack' type="button"
+            onclick="stop();">Parar</button>
+
+        <div class="image-slider-title">
+            Como participar da análise V.E.R.A Foco Atencional:
+        </div>
+
+        <div class="image-slider">
+            <div>
+                <div class="image-slider-content">
+                    <div class="image-slider-content-img">
+                        <img src="./img/slider-orientacoes.png" />
+                    </div>
+                    <div class="image-slider-content-title">Por favor, siga as próximas orientações</div>
+                    <div class="image-slider-content-text">Você participará de um experimento com rastreamento ocular</div>
+                </div>
+            </div>
+
+            <div>
+                <div class="image-slider-content">
+                    <div class="image-slider-content-img">
+                        <img src="./img/slider-tabs.png" />
+                    </div>
+                    <div class="image-slider-content-title">Feche todas as abas do navegador</div>
+                    <div class="image-slider-content-text">Usando notebook ou celular, verifique a duração da bateria</div>
+                </div>
+            </div>
+            
+            <div>
+                <div class="image-slider-content">
+                    <div class="image-slider-content-img">
+                        <img src="./img/slider-monitor.png" />
+                        <img src="./img/slider-phone.png" />
+                    </div>
+                    <div class="image-slider-content-title">Acesse via computador, tablet ou celular</div>
+                    <div class="image-slider-content-text">Caso opte pelo computador, ele deve possuir web cam</div>
+                </div>
+            </div>
+
+            <div>
+                <div class="image-slider-content">
+                    <div class="image-slider-content-img">
+                        <img src="./img/slider-horizontal.png" />
+                    </div>
+                    <div class="image-slider-content-title">Celular ou tablet fixo e na horizontal</div>
+                    <div class="image-slider-content-text">Caso acesse via celular ou tablet, não segure-o com as mãos
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <div class="image-slider-content">
+                    <div class="image-slider-content-img">
+                        <img src="./img/slider-bateria.png" />
+                    </div>
+                    <div class="image-slider-content-title">Nível da bateria</div>
+                    <div class="image-slider-content-text">Via notebook, tablet ou celular, verifique a duração da bateria 
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <div class="image-slider-content">
+                    <div class="image-slider-content-img">
+                        <img src="./img/slider-webcam.png" />
+                    </div>
+                    <div class="image-slider-content-title">Libere o acesso à webcam</div>
+                    <div class="image-slider-content-text">NÃO armazenamos nenhuma imagem ou som durante a análise</div>
+                </div>
+            </div>
+
+            <div>
+                <div class="image-slider-content">
+                    <div class="image-slider-content-img">
+                        <img src="./img/slider-face.png" />
+                    </div>
+                    <div class="image-slider-content-title">Fique na frente da câmera</div>
+                    <div class="image-slider-content-text">Mantenha sua cabeça e a câmera paradas o tempo todo</div>
+                </div>
+            </div>
+
+            <div>
+                <div class="image-slider-content">
+                    <div class="image-slider-content-img">
+                        <img src="./img/slider-light.png" />
+                    </div>
+                    <div class="image-slider-content-title">Seu rosto deve estar bem iluminado</div>
+                    <div class="image-slider-content-text">Sente-se confortavelmente em um local com boa iluminação</div>
+                </div>
+            </div>
+
+            <div>
+                <div class="image-slider-content" style="height: 310px; padding: 10px 0;">
+                    <div class="image-slider-content-title">Vamos começar!</div>
+                    <div class="image-slider-content-text">
+                        <ul class="instrucoes">
+                            <li>Clique no botão acima <strong>"Começar análise"</strong></li>
+                            <li>Após clicar, <strong>enquadre seu rosto</strong>, até que a cor do quadro altere de vermelho para preto.</li>
+                            <li>A imagem de seu rosto deve <strong>completar todo o espaço visível.</strong></li>
+                            <li>Em seguida, clique em <strong>Iniciar Calibração</strong> e após o ponto vermelho surgir, siga-o com os olhos.</li>
+                            <li>Assim que o ponto vermelho desaparecer, <strong>o teste iniciará automaticamente.</strong></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="image-slider-buttons"></div>
+
+        <div class='data_realtime' style='background-color: lightblue; display: none;'>
+            <p>
+                Real-Time Data:
+                <p id="GazeData"> </p>
+                <p id="HeadPhoseData"> </p>
+                <p id="HeadRotData"> </p>
+            </p>
+        </div>
+        <div id="gaze"
+            style='position: absolute;display:none;width: 100px;height: 100px;border-radius: 50%; pointer-events: none;	z-index: 999999'>
+        </div>
+        <div id="heatmapContainerWrapper"> <div id="heatmapContainer"> </div>   </div>
+
+        <!-- <br>
+        <br>
+        <br>
+        <p>With just a few lines of code, you can install our API into your website or app to start tracking your users
+            eyes via WebCam.</p>
+        <a href='https://gazerecorder.com/gazecloudapi/'>Read More </a>
+
+        <br>
+        <br>
+        <hr>
+        <p>
+            You can also try <a href='https://app.gazerecorder.com'>GazeRecorder App</a> . HTML Session Recording on any
+            website
+        </p> -->
+        <div class="pos-calibration-video">
+            <video muted name="media" id="media" src="./video/video.mp4" preload="auto">
+                Desculpa, mas o seu navegador não suporta vídeos incorporados.
+            </video>
+        </div>
+
+        <script src="./js/GazeCloudAPI.js"></script>
+        <script src="./js/heatmapLive.js"></script>
+        <script src="./js/index.js"></script>
+
+        <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+        <script type="text/javascript" src="//cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
+        <script>
+            $(document).ready(function() {
+                $('.image-slider').slick({
+                    appendArrows: $('.image-slider-buttons'),
+                    nextArrow: '<button type="button" class="slick-next">Próximo</button>',
+                    prevArrow: '<button type="button" class="slick-prev">Anterior</button>'
+                });
+            });
+
+            document.getElementById('media').addEventListener('ended', myHandler, false);
+            
+            function myHandler(e) {
+                stop();
+                document.querySelectorAll('.pos-calibration-video')[0].style.display = 'none';
+                Swal.fire(
+                    'Sucesso!',
+                    'Obrigado por participar!',
+                    'success'
+                )
+            }
+
+            function PlotGaze(GazeData) {
+                Results.StoreData(GazeData);
+                document.getElementById("GazeData").innerHTML = "GazeX: " + GazeData.GazeX + " GazeY: " + GazeData.GazeY;
+                document.getElementById("HeadPhoseData").innerHTML = " HeadX: " + GazeData.HeadX + " HeadY: " + GazeData.HeadY + " HeadZ: " + GazeData.HeadZ;
+                document.getElementById("HeadRotData").innerHTML = " Yaw: " + GazeData.HeadYaw + " Pitch: " + GazeData.HeadPitch + " Roll: " + GazeData.HeadRoll;
+                if (false) // gaze plot
+                {
+                    var x = GazeData.docX;
+                    var y = GazeData.docY;
+                    var gaze = document.getElementById("gaze");
+                    x -= gaze.clientWidth / 2;
+                    y -= gaze.clientHeight / 2;
+                    gaze.style.left = x + "px";
+                    gaze.style.top = y + "px";
+
+                    if (GazeData.state != 0) {
+                        if (gaze.style.display == 'block')
+                            gaze.style.display = 'none';
+                    }
+                    else {
+                        if (gaze.style.display == 'none')
+                            gaze.style.display = 'block';
+                    }
+                }
+            }
+
+
+            //////set callbacks/////////
+            GazeCloudAPI.OnCalibrationComplete = function () {
+                //ShowHeatMap();
+                document.querySelectorAll('.pos-calibration-video')[0].style.display = 'block';
+                Swal.fire(
+                    'Camera calibrada!',
+                    'Hora de iniciar a análise. O vídeo irá começar automáticamente.',
+                    'info'
+                ).then(() => {
+                    document.getElementById('media').play();
+                })
+            }
+            GazeCloudAPI.OnCalibrationFail = function () {
+                //ShowHeatMap();
+                Swal.fire(
+                    'Erro!',
+                    'Falha na calibração, tente novamente.',
+                    'error'
+                )
+            }
+            GazeCloudAPI.OnCamDenied = function () { console.log('Acesso à camera negado.') }
+            GazeCloudAPI.OnError = function (msg) { console.log('err: ' + msg) }
+            GazeCloudAPI.UseClickRecalibration = true;
+            GazeCloudAPI.OnResult = PlotGaze;
+
+            ShowHeatMap();
+            document.getElementById("gaze").style.display = 'none';
+
+            function start() {
+                document.getElementById("startid").style.display = 'none';
+                document.getElementById("stopid").style.display = 'block';
+                GazeCloudAPI.StartEyeTracking();
+                GazeCloudAPI.SetFps(15);
+                Results.FileName();
+            }
+
+            function stop() {
+                document.getElementById("startid").style.display = 'block';
+                document.getElementById("stopid").style.display = 'none';
+                GazeCloudAPI.StopEyeTracking();
+                Results.CreateFile();
+            }
+        </script>
+    </div>
+</body>
+
+</html>

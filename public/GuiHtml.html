@@ -1,0 +1,85 @@
+<!-- HTML QUE VAI NA VARIAVEL _GuiHtml DO ARQUIVO GazeCloudAPI.js -->
+<div id="CamAccessid"
+    style="height:100%; width:100%; left: 0px; position: fixed; top: 0%;display:none;opacity: 0.8; background-color: black;z-index: 9999;">
+    <h1 align="center" style="color: white;">Por favor, libere o acesso à camera.</h1>
+</div>
+<div id="errid"
+    style="height:100%; width:100%; left: 0px; position: fixed; top: 0%;display:none;opacity: 0.9; background-color: black;z-index: 99999;">
+    <h1 id="errmsgid" align="center" style="color: white;">Erro</h1>
+    <p align="center"> <button class="buttonRecalibrate" onclick=" GazeCloudAPI.RestartEyeTracking();" type="button">Tente novamente</button> </p>
+</div>
+<div id="loadid"
+    style="height:100%; width:100%; left: 0px; position: fixed; top: 0%;display:none;opacity: 0.93; background-color: black;z-index: 9999;">
+    <h1 align="center" style="color: white;"> Carregando...</h1>
+    <div class="loader"></div>
+</div>
+<div id="demoid"
+    style="height:100%; width:100%; left: 0px; position: fixed; top: 0%;display:none;opacity: 0.8; background-color: black;z-index: 9999;">
+    <h1 align="center" style="color: white;">Problemas com a gravação.</h1>
+</div>
+<div id="waitslotid"
+    style="height:100%; width:100%; left: 0px; position: fixed; top: 0%;display:none;opacity: 0.93; background-color: black;z-index: 9999;">
+    <h1 align="center" style="color: white;">Esperando...</h1>
+    <h1 id="waitslottimeid" align="center" style="color: white;">30</h1>
+</div>
+<div id="infoWaitForCalibration"
+    style="height: 100%; width: 100%; position: fixed;left: 0px;top: 0%; display: none ;opacity: 0.9;background-color: black;z-index: 999; ">
+    <h1 align="center" style="color: white;"> Por favor aguarde, processando calibração </h1>
+    <div id="clickinfoid"
+        style="position: fixed; height:100%; width:100%; left: 0%;top: 50%;text-align: center; display:block">
+        <p> Toda vez que você clica em qualquer lugar da tela, a precisão da sua visão continua melhorando </p>
+    </div>
+    <div class="loader"></div>
+</div>
+<div id="dpimm" style="height: 10cm; width: 10cm; left: 0%; position: fixed; top: 0%; z-index:-1"></div>
+<div id="CalDivId"
+    style="display: none; z-index: 999;background-color:white; position:fixed; left:0px; top:0px ;width: 100%; height: 100% ">
+    <h1 id="calinfoid"
+        style=" text-align: center; position: fixed;margin-left:auto; color:black; z-index: 999;top:25% ; width:100%">
+        Olhe para o ponto</h1>
+    <h1 id="calinfoWaitid"
+        style=" text-align: center; position: fixed;margin-left:auto; color:black; z-index: 999;top:60% ; width:100%">3
+    </h1> <canvas id="CalCanvasId"
+        style="background-color:white ;display: block;  left:0px; top:0px; width: 100%; height: 100%"> </canvas>
+</div>
+<div id="initializingid"
+    style="text-align: center; height:100%; width:100%; left: 0px; position: fixed; top: 0%;display:none;opacity: 0.6; background-color: black;z-index: 9999;">
+    <h1 style="color: white;">Por favor espere, inicializando...</h1>
+    <div class="loader"></div>
+</div>
+<div id="camid" style=" z-index: 1000;position:absolute; left:50%; top:2% ; margin-left: -160px; "> <video
+        id="showvideoid" autoplay width="320" height="240"
+        style=" display: block ;border-radius: 16px;background-color:black;"> </video><img height="240" width="320"
+        id="facemaskimgok" src="./img/FaceMaskok.png"
+        style=" position:absolute; left:0%; top:0%; opacity: 0.6; display: none; border-radius: 16px;"> <img
+        height="240" width="320" id="facemaskimgno" src="./img/FaceMaskno.png"
+        style=" position:absolute; left:0%; top:0%; opacity: 0.6; display: block; border-radius: 16px;">
+    <div id="showinit" style="text-align: center;"> <br>
+        <div> <button class="buttonCal" disabled id="_ButtonCalibrateId" type="button"
+                onclick="GazeCloudAPI.ShowCalibration()"> <img src="./img/calibrate.png" width="40" height="40">
+                <p style=" left:0%; top:0%; margin : 0"> Iniciar calibração </p>
+            </button>
+            <p id="corectpositionid" style=" color: red;margin : 0; display:none"> Por favor, corrija sua posição da cabeça!
+            </p>
+        </div> <br> 
+        
+            <!-- Make sure that : <ul style="list-style-type:disc; text-align: left;""> <li>Your face is visible</li> <li>You have good light in your room</li> <li>There is no strong light behind your back</li> <li>There is no light reflections on your glasses</li> </ul>  -->
+            <div class="start-calibration-tips">
+                <div class="gui-html-tips"><span style="font-weight: 700;">Enquadre seu rosto</span>, até que a cor do quadro altere de vermelho para preto.
+                    A imagem de seu rosto deve <span style="font-weight: 700;">completar todo o espaço visível</span>. 
+                    Clique em <span style="font-weight: 700;">Iniciar calibração</span> e após o ponto vermelho surgir, siga-o com os olhos.</div>
+            </div>
+        </div > </div> <img id="
+            calimgid" src="./img/calibrate.png" width="300" height="227" style="display: none;"> <img id="arrowright"
+                src="./img/arrow-right.png" style="display: none;"> <img id="arrowleft" src="./img/arrow-left.png"
+                style="display: none;"><img id="arrowdown" src="./img/arrow-down.png" style="display: none;"><img
+                id="arrowup" src="./img/arrow-up.png" style="display: none;"><img id="arrowimgid"
+                src="./img/arrow-right.png" width="300" height="227" style="display: none;"> <canvas id="bgcanvas"
+                width="640" height="480" style="display:none"></canvas>
+            <div id="GazeFlowContainer"
+                style=" background-color: #F3F4F5;height:100%; width:100%; left: 0px; position: fixed; top: 0%;display:none;opacity: 1.0;z-index: 99;">
+            </div>
+            <div style="display:none">
+                <p id="calinfolook">Olhe para o ponto</p>
+                <p id="calinfohead">Vire a cabeça na direção da seta</p>
+            </div>

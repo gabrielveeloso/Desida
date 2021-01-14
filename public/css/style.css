@@ -1,0 +1,184 @@
+* {
+  outline: none !important;
+}
+
+body {
+  color: black;
+  overflow-y: scroll;
+}
+
+.app-container {
+  text-align: center;
+  display: block;
+}
+
+.app-nav {
+  margin-bottom: 50px;
+  width: 100%;
+  height: 45px;
+  padding: 15px 0 5px 20px;
+  background-color: #fff;
+}
+
+.app-nav img {
+  width: 300px;
+  float: left;
+}
+
+.buttonStartEyeTrack {
+  background-color: #4472c4ff;
+}
+
+.data_realtime {
+  position: absolute;
+  width: 300px;
+  height: auto;
+  bottom: 5rem;
+  right: 0;
+}
+
+#heatmapContainerWrapper {
+  z-index: 100;
+}
+
+#gaze {
+  position: absolute;
+  display:none;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 999999
+}
+
+.gui-html-tips {
+  line-height: 2;
+  font-size: 20px;
+  padding: 20px;
+}
+
+.image-slider {
+  margin-top: 20px;
+}
+
+.image-slider-content {
+  width: 600px;
+  margin: 0 auto;
+  border-radius: 10px;
+  background-color: #fff;
+  height: 230px;
+}
+
+.image-slider-content-img {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.image-slider-content-title {
+  margin-top: 20px;
+  font-weight: 700;
+  font-size: 28px;
+}
+
+.image-slider-content-text {
+  margin-top: 20px;
+}
+
+.image-slider-content-img img {
+  width: 70px;
+  float: left;
+  margin-right: 20px;
+}
+
+.image-slider-title {
+  margin-top: 60px;
+  font-weight: 700;
+  font-size: 28px;
+}
+
+.image-slider-buttons {
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-slider-buttons .slick-arrow {
+  background-color: #4472c4ff;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  display: block;
+  font-size: 16px;
+  border-radius: 8px;
+}
+
+.image-slider-buttons .slick-prev.slick-arrow {
+  margin-right: 250px;
+}
+
+.pos-calibration-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  display: none;
+}
+
+.pos-calibration-video video {
+  width: 100%;
+  height: 100%;
+}
+
+.start-calibration-tips {
+  height: auto;
+  position: absolute;
+  width: 600px;
+  margin-left: -120px;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+ul.instrucoes {
+  line-height: 2em;
+  padding: 0 60px;
+}
+
+ul.instrucoes li {
+  list-style-type: disc;
+  padding-top: 0.7rem;
+  text-align: justify;
+  border: 0;
+  padding: 0;
+}
+
+ul.instrucoes li strong {
+  font-weight: bold;
+}
+
+@media screen and (max-width: 1024px) {
+  .image-slider-content {
+    width: 90%;
+    height: 260px;
+  }
+
+  .image-slider-buttons .slick-prev.slick-arrow {
+    margin-right: 100px;
+  }
+
+  .start-calibration-tips {
+    width: 90%;
+    margin: 0;
+  }
+}
